@@ -68,3 +68,15 @@ def test_get_nth_fibonacci_ten():
 
     # Assert
     assert result == 55
+def test_area_of_circle():
+    assert area_of_circle(1) == math.pi
+    assert area_of_circle(0) == 0
+    with pytest.raises(ValueError):
+        area_of_circle(-1)
+
+def test_get_nth_fibonacci():
+    assert get_nth_fibonacci(0) == 0
+    assert get_nth_fibonacci(1) == 1
+    assert get_nth_fibonacci(5) == 5
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(-1)
