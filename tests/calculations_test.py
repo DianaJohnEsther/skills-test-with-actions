@@ -1,7 +1,7 @@
-# System Modules
+## System Modules
 import sys
 import os
-
+import math
 # Installed Modules
 import pytest
 
@@ -58,13 +58,25 @@ def test_get_nth_fibonacci_one():
     assert result == 1
 
 
-# def test_get_nth_fibonacci_ten():
-#     """Test with n=10."""
-#     # Arrange
-#     n = 10
+def test_get_nth_fibonacci_ten():
+    """Test with n=10."""
+    # Arrange
+    n = 10
 
-#     # Act
-#     result = get_nth_fibonacci(n)
+    # Act
+    result = get_nth_fibonacci(n)
 
-#     # Assert
-#     assert result == 89
+    # Assert
+    assert result == 55
+def test_area_of_circle():
+    assert area_of_circle(1) == math.pi
+    assert area_of_circle(0) == 0
+    with pytest.raises(ValueError):
+        area_of_circle(-1)
+
+def test_get_nth_fibonacci():
+    assert get_nth_fibonacci(0) == 0
+    assert get_nth_fibonacci(1) == 1
+    assert get_nth_fibonacci(5) == 5
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(-1)
